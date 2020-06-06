@@ -3,7 +3,7 @@ export const themes = {
     dark:'dark'
 } 
 
-export const alertPositions = {
+export const alertProps = {
     vertical:{
         top:'top',
         bottom:'bottom',
@@ -12,5 +12,12 @@ export const alertPositions = {
         left:'left',
         right:'right',
         center:'center'
+    },
+    severity:{
+        success:'success',
+        error:'error',
+        warning:'warning',
+        info:'info',
     }
 }
+
