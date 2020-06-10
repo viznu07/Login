@@ -8,7 +8,7 @@ function Alert(props) {
 
 const Alerts = (props) => {
 
-    const [open, setOpen] = React.useState(props.isOpen);
+    const [open, setOpen] = React.useState(props.open);
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
@@ -34,7 +34,7 @@ const Alerts = (props) => {
                 severity={props.severity}
                 onClose={handleClose} 
                 >
-                {props.message}
+                {props.msg}
             </Alert>
         </Snackbar>
     );

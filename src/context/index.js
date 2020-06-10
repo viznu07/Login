@@ -1,5 +1,5 @@
 import React from 'react';
-import { themes } from '../utils';
+import { themes, alertProps } from '../utils';
 
 
 export const ThemeContext = React.createContext({
@@ -14,10 +14,10 @@ export const AuthContext = React.createContext({
 
 export const AlertContext = React.createContext({
     open: false,
-    type: '',
+    severity: alertProps.severity.success,
     msg: '',
-    vertical: 'top',
-    horizontal: 'center',
+    vertical: alertProps.vertical.top,
+    horizontal: alertProps.horizontal.center,
     onclose: () => null,
     setSnack: () => null
 })

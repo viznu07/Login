@@ -21,3 +21,6 @@ export const alertProps = {
     }
 }
 
+export const localStorageKeys = {
+    auth_token:'auth_token'
+}
