@@ -24,3 +24,11 @@ export const alertProps = {
 export const localStorageKeys = {
     auth_token:'auth_token'
 }
+
+export const netWorkCallMethods = {
+    get:'GET',
+    post:'POST',
+    put:'PUT',
+    delete:'DELETE',
+    update:'UPDATE'
+}

@@ -3,6 +3,77 @@ import axios from 'axios';
 import { AuthContext } from './contexts';
 import config from './config';
 import { withApollo } from '@apollo/react-hoc';
+import { networkCall } from './networkcall';
+import { netWorkCallMethods, localStorageKeys } from './utils';
+
+class AppAuth extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {},
+            isRefreshed: false
+        }
+    }
+
+    componentDidMount() {
+        this.refreshAPI();
+    }
+
+    refreshAPI() {
+        if (localStorage.getItem(localStorageKeys.auth_token)) {
+            /* networkCall(                
+                `${config.api_url}/auth/refresh`, //Your refresh API End Point
+                
+                netWorkCallMethods.get, //Mention your HTTP Method (GET,POST,PUT,UPDATE,DELETE) using the 
+                                        //until variable networkCallMethod 
+
+                null, //Request Body If any
+
+                null, //Addition Header If any
+
+                true  //If true it adds Authorization key to the existing header with token from localstorage 
+            ).then(res => {
+                let token = 'token';
+
+                //TODO: Save your token to the token variable
+                token = res.data.auth_token;
+
+                //TODO: Save the token to the localstorage if you want the user 
+                localStorage.setItem(localStorageKeys.auth_token, token);
+
+                this.setState({
+                    // TODO: Save the user detail here
+                    user: res.data.user,
+                    isRefreshed: true
+                })
+            }).catch(res => {
+                //Authorized token removing the current token from local storage.
+                localStorage.removeItem(localStorageKeys.auth_token);
+                this.setState({
+                    isRefreshed: true
+                })
+            })*/
+        } else {
+            this.setState({
+                isRefreshed: true
+            })
+        }
+    }
+
+    render(){
+        return (
+            <div>
+                {
+                    this.state.isRefreshed ?
+                        <AuthContext.Provider value={{user:this.state.user,setAuth: this.setState} }>
+                            {props.children}
+                        </AuthContext.Provider>
+                        : <p>Your Loader Here...</p>
+                }
+            </div>    
+        )
+    }
+}
 
 const AppAuth = (props) => {
 
@@ -16,35 +87,8 @@ const AppAuth = (props) => {
 
     React.useEffect(() => {
 
-        async function fetchData() {
-            if (localStorage.jwtToken) {
-                axios({
-                    url: `${config.api_url}/auth/refresh`,
-                    method: "GET",
-                    headers: {
-                        Authorization: localStorage.jwtToken
-                    }
-                }).then(res => {
-                    let token = res.data.auth_token;
-                    
-                    localStorage.setItem("jwtToken", token);
-
-                    let is_self_registered = false;
-                    if (res.data.user.role_type === "self" || localStorage.role == "self") {
-                        is_self_registered = true
-                    }
-                    setAuth({ ...auth, user: res.data.user, is_self_registered });
-                    setState({ isRefreshed: true })
-                }).catch(res => {
-                    localStorage.removeItem('jwtToken');
-                    // window.location.reload(true)
-                    setState({ isRefreshed: true })
-                })
-            } else {
-                setState({ isRefreshed: true })
-            }
-        }
-        fetchData();
+        async function
+            fetchData();
     }, [state.isRefreshed])
 
     return (
