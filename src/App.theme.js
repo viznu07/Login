@@ -16,11 +16,11 @@ const AppTheme = (props) => {
         //Geting the theme json for  the selected theme
         switch (theme.name) {
             case themes.default:
-                current_theme_json = require('./theme/default.json');
+                current_theme_json = require('./themes/default.json');
                 break;
         
             default:
-                current_theme_json = require('./theme/default.json');
+                current_theme_json = require('./themes/default.json');
                 break;
         }
 
