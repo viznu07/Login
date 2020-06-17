@@ -34,7 +34,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Before you start
 
-Don't forgot to create you local environment file (.env.local) and all the environment variables are described in the [env_struct]() file
+Don't forgot to create you local environment file (.env.local) and all the environment variables are described in the [env_struct](https://gitlab.com/crayond_knowledge_repo/react_boilerplate/-/blob/demo_branch/env_struct) file
 
 ## Available Scripts
 
