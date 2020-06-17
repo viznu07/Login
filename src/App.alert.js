@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from './components';
-import { SnackBarContext } from './contexts'
 import { alertProps } from './utils';
+import { AlertContext } from './contexts';
 
 class AppAlert extends React.Component {
     constructor(props) {
@@ -31,13 +31,13 @@ class AppAlert extends React.Component {
 
     render() {
         return (
-            <SnackBarContext.Provider value={{
+            <AlertContext.Provider value={{
                 ...this.state, onclose: this.close,
                 setSnack: this.set
             }} >
                 {this.state.open ? <Alert {...this.state} onclose={this.close} /> : ''}
                 {this.props.children}
-            </SnackBarContext.Provider>
+            </AlertContext.Provider>
         )
     }
 }

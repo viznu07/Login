@@ -1,8 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import { AuthContext } from './contexts';
 import config from './config';
-import { withApollo } from '@apollo/react-hoc';
 import { networkCall } from './networkcall';
 import { netWorkCallMethods, localStorageKeys } from './utils';
 
@@ -21,7 +19,7 @@ class AppAuth extends React.Component {
 
     refreshAPI() {
         if (localStorage.getItem(localStorageKeys.auth_token)) {
-            /* networkCall(                
+             networkCall(                
                 `${config.api_url}/auth/refresh`, //Your refresh API End Point
                 
                 netWorkCallMethods.get, //Mention your HTTP Method (GET,POST,PUT,UPDATE,DELETE) using the 
@@ -52,7 +50,7 @@ class AppAuth extends React.Component {
                 this.setState({
                     isRefreshed: true
                 })
-            })*/
+            })
         } else {
             this.setState({
                 isRefreshed: true
@@ -62,47 +60,17 @@ class AppAuth extends React.Component {
 
     render(){
         return (
-            <div>
+            <>
                 {
                     this.state.isRefreshed ?
                         <AuthContext.Provider value={{user:this.state.user,setAuth: this.setState} }>
-                            {props.children}
+                            {this.props.children}
                         </AuthContext.Provider>
-                        : <p>Your Loader Here...</p>
+                        : <>Your Loader Here...</>
                 }
-            </div>    
+            </>    
         )
     }
 }
 
-const AppAuth = (props) => {
-
-    const [auth, setAuth] = React.useState({ user: {}, is_self_registered: false });
-    const [
-        state,
-        setState
-    ] = React.useState({ isRefreshed: false });
-
-    // Todo: Your Referesh API here
-
-    React.useEffect(() => {
-
-        async function
-            fetchData();
-    }, [state.isRefreshed])
-
-    return (
-        <div>
-            {
-                state.isRefreshed ?
-                    <AuthContext.Provider value={{ ...auth, setAuth }}>
-                        {props.children}
-                    </AuthContext.Provider>
-                    : <img src="/images/loader.svg" className={"full_loading"} alt="loader" width="80px" style={{ marginTop: '48vh', marginLeft: '50%', outline: "none" }} />
-            }
-        </div>
-
-    )
-}
-
-export default withApollo(AppAuth);
+export default AppAuth;

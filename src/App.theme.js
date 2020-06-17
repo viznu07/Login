@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 
-import { ThemeContext } from './context';
+import { ThemeContext } from './contexts';
 import { themes } from './utils';
 
 const AppTheme = (props) => {
 
-    let [theme, setTheme] = useState({
+    let [theme, setTheme] = React.useState({
         name: themes.default
     });
 

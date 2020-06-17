@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Link } from '@material-ui/core';
+import { Grid, Typography, Link, withStyles } from '@material-ui/core';
 
 const styles = theme => ({
     root: {
@@ -8,7 +8,7 @@ const styles = theme => ({
     }
 })
 
-class ErrorBoundary extends React.Component {
+class AppErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
         this.state = { hasError: false };
@@ -28,6 +28,7 @@ class ErrorBoundary extends React.Component {
             // You can render any custom fallback UI
             return <Grid 
                 container 
+                classes={this.props.className.root}
                 id="error_catcher_root" 
                 className={this.props.classes.root}
                 justify="center" alignItems="center">
@@ -60,4 +61,4 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-export default ErrorBoundary;
+export default withStyles(styles)(AppErrorBoundary);
