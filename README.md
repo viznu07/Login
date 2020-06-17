@@ -16,21 +16,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Folder Structure (/src)
 
-- Folder Name: `/components` : Collection of all components and all the components need to be exposed via    index.js only.
+- `/components` : Collection of all components and all the components need to be exposed via    index.js only.
 
-- Folder Name: `/contexts`   : Collection of all Contexts used all over the app.
+- `/contexts`   : Collection of all Contexts used all over the app.
 
-- Folder Name: `/graphql`    : Graphql Setups, ``index.js`` contain the client setup, ``queries.js,mutation.js and subscription.js`` contains the graphql quries used in the application.
+- `/graphql`    : Graphql Setups, ``index.js`` contain the client setup, ``queries.js,mutation.js and subscription.js`` contains the graphql quries used in the application.
 
-- Folder Name: `/networkcall`: It contains the function which is used for all the network call. i.e To hit API it check : Internet Connection, Proper URL, Proper Payload before the network call. We use [Axios](https://www.npmjs.com/package/axios) for all the network call.
+- `/networkcall`: It contains the function which is used for all the network call. i.e To hit API it check : Internet Connection, Proper URL, Proper Payload before the network call. We use [Axios](https://www.npmjs.com/package/axios) for all the network call.
 
-- Folder Name: `/routers`    : It contains the ``index.js`` file where all the routing are defined. The ``route.js`` file contain all the routes used all over the application.  The ``private_router.js`` contains the private router for protected routes.
+- `/routers`    : It contains the ``index.js`` file where all the routing are defined. The ``route.js`` file contain all the routes used all over the application.  The ``private_router.js`` contains the private router for protected routes.
 
-- Folder Name: `/screens`    : It contain all the screens (typically all the components are built togethere here) in the app is defined here.
+- `/screens`    : It contain all the screens (typically all the components are built togethere here) in the app is defined here.
 
-- Folder Name: `/themes`     : Contains all the [Theme JSON's](https://material-ui.com/customization/default-theme/) (default.json,darktheme.json) we want to use the thoroughout the app.  Use this [Material UI Theme Generator](https://in-your-saas.github.io/material-ui-theme-editor/) for creating new themes.
+- `/themes`     : Contains all the [Theme JSON's](https://material-ui.com/customization/default-theme/) (default.json,darktheme.json) we want to use the thoroughout the app.  Use this [Material UI Theme Generator](https://in-your-saas.github.io/material-ui-theme-editor/) for creating new themes.
 
-- Folder Name: `/utils`      : All the common functions,constants are defined in the ``index.js`` of the folder.
+- `/utils`      : All the common functions,constants are defined in the ``index.js`` of the folder.
 
 ## Before you start
 
