@@ -6,6 +6,7 @@ import AppTheme from './App.theme';
 import AppGQLClient from './App.gqlclient';
 import AppAlert from './App.alert';
 import AppErrorBoundary from './App.error_boundry';
+import RouterApp from './router';
 
 function App() {
   return <AppAuth>
@@ -13,7 +14,7 @@ function App() {
       <AppTheme>
         <AppGQLClient>
           <AppAlert>
-            
+            <RouterApp />
           </AppAlert>
         </AppGQLClient>
       </AppTheme>
